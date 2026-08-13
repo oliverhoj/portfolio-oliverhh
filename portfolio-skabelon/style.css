@@ -255,10 +255,15 @@ a{ color: inherit; text-decoration:none; }
 /* Skills marquee */
 .marquee{
   margin-top: 5rem;
-  overflow:hidden;
+  overflow: hidden;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   padding: 1.1rem 0;
+
+  /* Gør linjen lige så bred som hele skærmen */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 .marquee-track{
   display:flex;
