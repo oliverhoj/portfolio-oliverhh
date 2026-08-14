@@ -32,21 +32,20 @@
 <!-- HERO -->
 <!-- ============================================= -->
 <section class="hero" id="top">
-  <!-- SKIFT VIDEO: erstat "videoer/hero.mp4" med din egen video.
-       Har du ikke en video? Slet <video>-elementet og sæt i stedet
-       class="hero no-video" på <section class="hero" ...> herover,
-       og tilføj evt. et baggrundsbillede via CSS (se style.css, søg "HERO BAGGRUND"). -->
-  <video class="hero-video" autoplay muted loop playsinline poster="billeder/hero-poster.jpg">
-    <source src="videoer/hero.mp4" type="video/mp4">
-  </video>
+
+  <img class="hero-image" src="billeder/gq.png" alt="Oliver Høj">
+
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
     <p class="eyebrow">Portfolio</p>
     <h1 class="hero-title">OLIVER HØJ</h1>
-    <p class="hero-tagline">GRAFISK DESIGN         VISUAL STORYTELLER</p>
-    <a href="#projekter" class="scroll-hint">Se projekter <span>↓</span></a>
+    <p class="hero-tagline">GRAFISK DESIGN &nbsp;&nbsp;&nbsp; VISUAL STORYTELLER</p>
+    <a href="#projekter" class="scroll-hint">
+      Se projekter <span>↓</span>
+    </a>
   </div>
+
 </section>
 
 <!-- ============================================= -->
@@ -65,13 +64,19 @@
       <div class="project-media">
         <!-- Video-projekt: brug <video>. Billede-projekt: erstat med <img src="billeder/projekt1.jpg" alt="Beskrivelse"> -->
         <video autoplay muted loop playsinline preload="auto">
-        <source src="video/lumina.mov" type="video/quicktime">
+        <source src="video/overtaci.mp4" type="video/quicktime">
         </video>
       </div>
       <div class="project-info">
         <h3>Museum Ovartaci</h3>
         <p>Vi udviklede en digital og interaktiv oplevelse til Museum Ovartaci, der gennem storytelling og interaktion gjorde Ovartacis historie mere levende og engagerende for museets besøgende.</p>
-        <a href="#" class="project-link">Se mere →</a>
+        <!-- Museum Ovartaci -->
+        <a href="https://iamjacob.github.io/ovartaci/"
+           class="project-link"
+           target="_blank"
+          rel="noopener"> 
+          Se mere →
+        </a>
       </div>
     </article>
 
@@ -85,7 +90,12 @@
       <div class="project-info">
         <h3>Storcenter Nord</h3>
         <p>Vi udviklede en interaktiv touchskærm til akvariet i Storcenter Nord, der gennem leg, animation og interaktion gør læring om fisk sjovere for børn.</p>
-        <a href="#" class="project-link">Se mere →</a>
+        <a href="https://oliverhoj.github.io/ekasmen-exd-storcenternord-oliver/"
+           class="project-link"
+           target="_blank"
+          rel="noopener"> 
+          Se mere →
+        </a>
       </div>
     </article>
 

@@ -113,11 +113,14 @@ a{ color: inherit; text-decoration:none; }
   align-items:flex-end;
   overflow:hidden;
 }
-.hero-video{
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover;
-  z-index:0;
+.hero-image{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
 }
 /* HERO BAGGRUND: hvis du ikke bruger video, tilføj i stedet:
    background: url("billeder/hero.jpg") center/cover no-repeat;
