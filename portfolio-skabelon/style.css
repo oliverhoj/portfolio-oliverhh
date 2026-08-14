@@ -345,7 +345,29 @@ a{ color: inherit; text-decoration:none; }
   margin:0;
   font-size: 0.95rem;
 }
-.about-timeline{ border-radius: 4px; }
+.timeline-wrapper{
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 4rem;
+
+}
+
+.about-timeline{
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  height: auto;
+
+  display: block;
+
+}
 
 @media (max-width: 760px){
   .about-grid{ grid-template-columns: 1fr; }
