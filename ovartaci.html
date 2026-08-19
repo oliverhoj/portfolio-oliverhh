@@ -16,72 +16,101 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <header class="case-nav">
+  <!-- =========================================
+       NAVIGATION
+  ========================================== -->
 
-    <a href="index.html" class="case-logo">
-      OLIVER<span>HØJ</span>
+  <header class="topbar">
+
+    <a href="index.html#top" class="logo">
+      <img
+        src="billeder/logo.png"
+        alt="OH logo"
+        class="logo-icon"
+      >
+
+      <span class="logo-name">
+        OLIVER<span>HØJ</span>
+      </span>
     </a>
 
-    <a href="index.html#projekter" class="back-link">
-      ← TILBAGE TIL PROJEKTER
-    </a>
+
+    <nav class="nav">
+
+      <a href="index.html#projekter">
+        Projekter
+      </a>
+
+      <a href="index.html#galleri">
+        Galleri
+      </a>
+
+      <a href="index.html#om-mig">
+        Om mig
+      </a>
+
+      <a href="index.html#kontakt">
+        Kontakt
+      </a>
+
+    </nav>
 
   </header>
 
 
   <main class="case-page">
 
-    <!-- HERO -->
+
     <!-- =========================================
-     HERO
-========================================= -->
+         HERO
+    ========================================== -->
 
-<section class="case-hero">
+    <section class="case-hero">
 
-  <h1 class="case-hero-title">
-    MUSEUM OVARTACI
-  </h1>
-
-
-  <div class="case-hero-grid">
-
-    <!-- VIDEO -->
-    <div class="case-hero-media">
-
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-      >
-        <source
-          src="video/overtaci.mp4"
-          type="video/mp4"
-        >
-      </video>
-
-    </div>
+      <h1 class="case-hero-title">
+        MUSEUM OVARTACI
+      </h1>
 
 
-    <!-- KORT BESKRIVELSE -->
-    <div class="case-hero-description">
+      <div class="case-hero-grid">
 
-      <p>
-        En interaktiv digital oplevelse, der gør
-        Ovartacis historie mere levende og engagerende
-        gennem storytelling, illustrationer og animation.
-      </p>
+        <div class="case-hero-media">
 
-    </div>
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+            <source
+              src="video/overtaci.mp4"
+              type="video/mp4"
+            >
+          </video>
 
-  </div>
-
-</section>
+        </div>
 
 
-    <!-- PROJEKTBESKRIVELSE -->
+        <div class="case-hero-description">
+
+          <p>
+            En interaktiv digital oplevelse, der gør
+            Ovartacis historie mere levende og engagerende
+            gennem storytelling, illustrationer og animation.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PROJEKTBESKRIVELSE
+    ========================================== -->
+
     <section class="case-content-section">
 
       <h2>
@@ -110,7 +139,10 @@
     </section>
 
 
-    <!-- PROCES -->
+    <!-- =========================================
+         PROCES
+    ========================================== -->
+
     <section class="case-content-section">
 
       <h2>
@@ -143,7 +175,10 @@
     </section>
 
 
-    <!-- VÆRKTØJER -->
+    <!-- =========================================
+         VÆRKTØJER
+    ========================================== -->
+
     <section class="case-content-section">
 
       <h2>
@@ -164,7 +199,10 @@
     </section>
 
 
-    <!-- BILLEDER -->
+    <!-- =========================================
+         BILLEDER
+    ========================================== -->
+
     <section class="case-visuals">
 
       <div class="visual-card">
@@ -191,7 +229,10 @@
     </section>
 
 
-    <!-- CTA -->
+    <!-- =========================================
+         CTA
+    ========================================== -->
+
     <section class="result-section">
 
       <h2>
@@ -204,7 +245,7 @@
         rel="noopener"
         class="case-button"
       >
-        PRØV DEN SELV 
+        PRØV DEN SELV
       </a>
 
     </section>
@@ -212,12 +253,24 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
   <footer class="case-footer">
 
-    <a href="index.html" class="case-logo">
-      OLIVER<span>HØJ</span>
+    <a href="index.html#top" class="logo">
+      <img
+        src="billeder/logo.png"
+        alt="OH logo"
+        class="logo-icon"
+      >
+
+      <span class="logo-name">
+        OLIVER<span>HØJ</span>
+      </span>
     </a>
+
 
     <a href="index.html#projekter">
       ← TILBAGE TIL PROJEKTER
@@ -226,8 +279,14 @@
   </footer>
 
 
-  <!-- LIGHTBOX -->
-  <div class="case-lightbox" id="case-lightbox">
+  <!-- =========================================
+       LIGHTBOX
+  ========================================== -->
+
+  <div
+    class="case-lightbox"
+    id="case-lightbox"
+  >
 
     <button
       class="case-lightbox-close"
@@ -252,6 +311,7 @@
     const caseLightbox = document.getElementById("case-lightbox");
     const caseLightboxImage = document.getElementById("case-lightbox-image");
     const caseLightboxClose = document.getElementById("case-lightbox-close");
+
 
     visualCards.forEach(card => {
 

@@ -60,45 +60,96 @@ a{
    NAVIGATION
    ========================================================= */
 
-.case-nav{
-  max-width: var(--max);
+.topbar{
+  position: fixed;
 
-  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
 
-  padding: 2rem var(--pad);
+  z-index: 100;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
+  padding: 1.25rem var(--pad);
+
+  background: var(--ink);
 }
 
 
-.case-logo{
-  font-size: 1.05rem;
-  font-weight: 600;
+/* LOGO */
+
+.logo{
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
 }
 
 
-.case-logo span{
-  color: var(--gold);
+.logo-icon{
+  width: 32px;
+  height: 32px;
+
+  object-fit: contain;
+
+  display: block;
 }
 
 
-.back-link{
-  font-size: 0.75rem;
+.logo-name{
+  color: #f2eee8;
 
-  font-weight: 600;
+  font-size: 1.15rem;
 
-  letter-spacing: 0.08em;
+  font-weight: 500;
+
+  letter-spacing: 0.02em;
+}
+
+
+.logo-name > span{
+  color: #d4a84f;
+}
+
+
+/* NAV LINKS */
+
+.nav{
+  display: flex;
+
+  align-items: center;
+
+  gap: 2.25rem;
+}
+
+
+.nav a{
+  color: var(--paper);
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.09em;
 
   text-transform: uppercase;
 
-  transition: opacity 0.2s ease;
+  padding-bottom: 3px;
+
+  border-bottom: 1px solid transparent;
+
+  transition:
+    border-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 
-.back-link:hover{
-  opacity: 0.6;
+.nav a:hover{
+  border-color: currentColor;
 }
 
 
@@ -120,7 +171,10 @@ a{
    ========================================================= */
 
 .case-hero{
-  padding: 5rem 0 8rem;
+  padding:
+    11rem
+    0
+    8rem;
 }
 
 
@@ -129,9 +183,12 @@ a{
 .case-hero-title{
   margin: 0 0 4rem;
 
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-  font-size: clamp(4.5rem, 9vw, 9rem);
+  font-size:
+    clamp(
+      4.5rem,
+      9vw,
+      9rem
+    );
 
   font-weight: 900;
 
@@ -141,7 +198,7 @@ a{
 
   text-transform: uppercase;
 
-  color: var(--paper);
+  color: #F2C879;;
 }
 
 
@@ -154,7 +211,12 @@ a{
     minmax(0, 2.3fr)
     minmax(250px, 1fr);
 
-  gap: clamp(2rem, 4vw, 4.5rem);
+  gap:
+    clamp(
+      2rem,
+      4vw,
+      4.5rem
+    );
 
   align-items: center;
 }
@@ -185,6 +247,7 @@ a{
 
 .case-hero-description{
   display: flex;
+
   align-items: center;
 }
 
@@ -194,7 +257,12 @@ a{
 
   max-width: 360px;
 
-  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  font-size:
+    clamp(
+      1.1rem,
+      1.5vw,
+      1.4rem
+    );
 
   font-weight: 500;
 
@@ -218,7 +286,12 @@ a{
 .case-content-section h2{
   margin: 0 0 2rem;
 
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-size:
+    clamp(
+      1.5rem,
+      2.5vw,
+      2.2rem
+    );
 
   font-weight: 700;
 
@@ -244,7 +317,12 @@ a{
 
   color: var(--paper-dim);
 
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-size:
+    clamp(
+      1rem,
+      1.3vw,
+      1.15rem
+    );
 
   line-height: 1.7;
 }
@@ -281,7 +359,9 @@ a{
   align-items: center;
   justify-content: center;
 
-  padding: 0.85rem 1.2rem;
+  padding:
+    0.85rem
+    1.2rem;
 
   border: 1px solid var(--line);
 
@@ -317,13 +397,17 @@ a{
    ========================================================= */
 
 .case-visuals{
-  padding: 5rem 0 7rem;
+  padding:
+    5rem
+    0
+    7rem;
 
   border-top: 1px solid var(--line);
 
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:
+    repeat(3, 1fr);
 
   gap: 1rem;
 }
@@ -368,7 +452,10 @@ a{
    ========================================================= */
 
 .result-section{
-  padding: 7rem 0 9rem;
+  padding:
+    7rem
+    0
+    9rem;
 
   border-top: 1px solid var(--line);
 
@@ -379,7 +466,12 @@ a{
 .result-section h2{
   margin: 0 0 3rem;
 
-  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-size:
+    clamp(
+      3.5rem,
+      8vw,
+      8rem
+    );
 
   font-weight: 900;
 
@@ -398,7 +490,9 @@ a{
 .case-button{
   display: inline-block;
 
-  padding: 1rem 1.4rem;
+  padding:
+    1rem
+    1.4rem;
 
   background: var(--teal);
 
@@ -442,7 +536,10 @@ a{
 
   margin: 0 auto;
 
-  padding: 3rem var(--pad) 4rem;
+  padding:
+    3rem
+    var(--pad)
+    4rem;
 
   border-top: 1px solid var(--line);
 
@@ -606,28 +703,55 @@ a{
 
 @media (max-width: 760px){
 
-  .case-nav{
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+  .topbar{
+    padding:
+      1rem
+      1.25rem;
   }
 
 
-  .back-link{
-    font-size: 0.65rem;
+  .logo-icon{
+    width: 28px;
+    height: 28px;
+  }
+
+
+  .logo-name{
+    font-size: 1rem;
+  }
+
+
+  .nav{
+    gap: 0.8rem;
+  }
+
+
+  .nav a{
+    font-size: 0.62rem;
+
+    letter-spacing: 0.05em;
   }
 
 
   /* HERO */
 
   .case-hero{
-    padding: 4rem 0 5rem;
+    padding:
+      8rem
+      0
+      5rem;
   }
 
 
   .case-hero-title{
     margin-bottom: 2.5rem;
 
-    font-size: clamp(3.4rem, 15vw, 6rem);
+    font-size:
+      clamp(
+        3.4rem,
+        15vw,
+        6rem
+      );
 
     line-height: 0.85;
   }
@@ -674,7 +798,9 @@ a{
 
 
   .tools span{
-    padding: 0.75rem 0.9rem;
+    padding:
+      0.75rem
+      0.9rem;
 
     font-size: 0.7rem;
   }
@@ -683,7 +809,10 @@ a{
   /* VISUALS */
 
   .case-visuals{
-    padding: 4rem 0 5rem;
+    padding:
+      4rem
+      0
+      5rem;
 
     grid-template-columns: 1fr;
 
@@ -694,12 +823,20 @@ a{
   /* RESULT */
 
   .result-section{
-    padding: 5rem 0 6rem;
+    padding:
+      5rem
+      0
+      6rem;
   }
 
 
   .result-section h2{
-    font-size: clamp(3rem, 14vw, 5rem);
+    font-size:
+      clamp(
+        3rem,
+        14vw,
+        5rem
+      );
 
     margin-bottom: 2.5rem;
   }
@@ -735,5 +872,32 @@ a{
 
     font-size: 2.6rem;
   }
+
+}
+
+
+/* =========================================================
+
+   PROJEKTBESKRIVELSE / PROCES / VÆRKTØJER
+
+   ========================================================= */
+
+.case-content-section h2{
+
+  margin: 0 0 2rem;
+
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+
+  text-transform: uppercase;
+
+  /* Samme turkis som SE MERE-knappen */
+
+  color: #55C9C3;
 
 }
