@@ -1,350 +1,716 @@
-/* =========================================================
-   DESIGN-TOKENS — skift farver og skrifttyper her, så følger
-   resten af siden automatisk med.
-   ========================================================= */
 :root{
-  --ink:        #12141C;   /* baggrund, mørk marineblå/sort */
-  --panel:      #1C1F2B;   /* kort / paneler, lidt lysere end baggrund */
-  --paper:      #F2EFE6;   /* lys tekstfarve / lyse flader */
-  --paper-dim:  #C7C3B6;   /* dæmpet lys tekst, til brødtekst på mørk bund */
-  --gold:       #C9A15A;   /* primær accent */
-  --teal:       #5C8B89;   /* sekundær accent, til hover m.m. */
-  --line:       rgba(242,239,230,0.14);
 
-  --display: "Fraunces", serif;
-  --body:    "Work Sans", sans-serif;
-  --mono:    "Space Mono", monospace;
+  --ink: #12141C;
+  --panel: #1C1F2B;
+
+  --paper: #F2EFE6;
+  --paper-dim: #C7C3B6;
+
+  --gold: #C9A15A;
+  --teal: #5C8B89;
+
+  --line: rgba(242,239,230,0.14);
+
+  --display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --max: 1200px;
+
   --pad: clamp(1.25rem, 4vw, 3.5rem);
+
 }
 
-*{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
+
+*{
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
 body{
-  margin:0;
+  margin: 0;
   background: var(--ink);
   color: var(--paper);
   font-family: var(--body);
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
-img, video{ max-width:100%; display:block; }
-a{ color: inherit; text-decoration:none; }
 
-@media (prefers-reduced-motion: reduce){
-  *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+img,
+video{
+  max-width: 100%;
+  display: block;
 }
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* NAVIGATION */
+
 .topbar{
   position: fixed;
-  top:0; left:0; right:0;
+  top: 0;
+  left: 0;
+  right: 0;
+
   z-index: 50;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   padding: 1.25rem var(--pad);
-  mix-blend-mode: difference; /* logo/nav forbliver læsbart uanset baggrund */
+
+  mix-blend-mode: difference;
 }
+
 .logo{
   font-family: var(--display);
   font-size: 1.15rem;
   letter-spacing: 0.02em;
   font-weight: 500;
 }
-.logo span{ color: var(--gold); mix-blend-mode: normal; }
 
-.nav{ display:flex; gap: 2.25rem; }
+.logo span{
+  color: var(--gold);
+  mix-blend-mode: normal;
+}
+
+.nav{
+  display: flex;
+  gap: 2.25rem;
+}
+
 .nav a{
   font-family: var(--mono);
   font-size: 0.9rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
+
   padding-bottom: 3px;
+
   border-bottom: 1px solid transparent;
-  transition: border-color .25s ease, opacity .25s ease;
 }
-.nav a:hover{ border-color: currentColor; }
+
+.nav a:hover{
+  border-color: currentColor;
+}
 
 .burger{
-  display:none;
-  flex-direction:column;
-  gap:5px;
-  background:none;
-  border:none;
-  cursor:pointer;
-  padding: 6px;
-}
-.burger span{
-  width: 22px; height: 2px;
-  background: var(--paper);
-  display:block;
+  display: none;
 }
 
-@media (max-width: 760px){
-  .nav{
-    position: fixed;
-    inset: 0 0 auto 0;
-    top: 0;
-    background: var(--ink);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 6rem var(--pad) 2.5rem;
-    transform: translateY(-100%);
-    transition: transform .35s ease;
-    mix-blend-mode: normal;
-  }
-  .nav.open{ transform: translateY(0); }
-  .nav a{ font-size: 1rem; }
-  .burger{ display:flex; }
-}
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* HERO */
+
 .hero{
   position: relative;
+
   min-height: 100svh;
-  display:flex;
-  align-items:flex-end;
-  overflow:hidden;
+
+  display: flex;
+  align-items: flex-end;
+
+  overflow: hidden;
 }
+
 .hero-image{
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  object-position: center;
+
   z-index: 0;
 }
-/* HERO BAGGRUND: hvis du ikke bruger video, tilføj i stedet:
-   background: url("billeder/hero.jpg") center/cover no-repeat;
-   på .hero, og fjern <video>-elementet i HTML'en. */
-.hero-overlay{
-  position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(18,20,28,0.35) 0%, rgba(18,20,28,0.55) 55%, rgba(18,20,28,0.95) 100%);
-  z-index:1;
-}
-.hero-content{
-  position:relative; z-index:2;
-  padding: 0 var(--pad) 4.5rem;
-  width:100%;
-}
-.eyebrow{
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 0 0 0.75rem;
-}
-.hero-title{
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(3rem, 11vw, 8rem);
-  line-height: 0.92;
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-.hero-tagline{
-  font-family: var(--mono);
-  font-size: clamp(0.75rem, 1.4vw, 0.95rem);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--paper-dim);
-  margin: 1.25rem 0 0;
-}
-.scroll-hint{
-  display:inline-flex;
-  align-items:center;
-  gap: 0.5rem;
-  margin-top: 2.5rem;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--paper);
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 4px;
-}
-.scroll-hint span{ display:inline-block; animation: bob 1.8s ease-in-out infinite; }
-@keyframes bob{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(4px); } }
 
-/* =========================================================
-   SECTIONS — generisk
-   ========================================================= */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18,20,28,0.35) 0%,
+      rgba(18,20,28,0.55) 55%,
+      rgba(18,20,28,0.95) 100%
+    );
+
+  z-index: 1;
+}
+
+.hero-content{
+  position: relative;
+
+  z-index: 2;
+
+  padding:
+    0
+    var(--pad)
+    4.5rem;
+
+  width: 100%;
+}
+
+.eyebrow{
+  font-size: 0.75rem;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  color: var(--gold);
+}
+
+.hero-title{
+  font-weight: 700;
+
+  font-size:
+    clamp(
+      3rem,
+      11vw,
+      8rem
+    );
+
+  line-height: 0.92;
+
+  margin: 0;
+
+  letter-spacing: -0.04em;
+}
+
+.hero-tagline{
+  font-size:
+    clamp(
+      0.75rem,
+      1.4vw,
+      0.95rem
+    );
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+
+  color: var(--paper-dim);
+}
+
+.scroll-hint{
+  display: inline-flex;
+
+  margin-top: 2.5rem;
+
+  gap: 0.5rem;
+
+  text-transform: uppercase;
+
+  font-size: 0.75rem;
+}
+
+
+/* SECTIONS */
+
 .section{
   max-width: var(--max);
+
   margin: 0 auto;
-  padding: 7rem var(--pad) 5rem;
+
+  padding:
+    7rem
+    var(--pad)
+    5rem;
 }
+
 .section-head{
-  display:flex;
-  align-items:baseline;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 1.25rem;
+  margin-bottom: 4.5rem;
 }
-.index-mark{
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  color: var(--gold);
-}
+
 .section-head h2{
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  color: #F2C879;
+  font-weight: 900;
+
+  font-size:
+    clamp(
+      4.5rem,
+      8vw,
+      7.5rem
+    );
+
+  line-height: 0.85;
+
+  letter-spacing: -0.07em;
+
+  text-transform: uppercase;
+
   margin: 0;
 }
 
-/* =========================================================
-   PROJEKTER
-   ========================================================= */
+
+/* PROJEKTER */
+
 .projects{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap: 2rem;
 }
+
 .project{
   display: flex;
+
   flex-direction: column;
+
   gap: 1rem;
 }
 
 .project-media{
-  overflow:hidden;
-  border-radius: 4px;
+  overflow: hidden;
+
+  aspect-ratio: 16 / 10;
+
   background: var(--panel);
-  aspect-ratio: 16/10;
 }
-.project-media video, .project-media img{
-  width:100%; height:100%;
-  object-fit:cover;
+
+.project-media video,
+.project-media img{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
 }
+
 .project-info h3{
-  font-family: var(--display);
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  margin: 0 0 0.75rem;
+  font-size:
+    clamp(
+      1.4rem,
+      2.5vw,
+      2rem
+    );
+
+  margin:
+    0
+    0
+    0.75rem;
 }
+
 .project-info p{
   color: var(--paper-dim);
+
   line-height: 1.6;
-  margin: 0 0 1.25rem;
-  max-width: 40ch;
 }
+
+
+/* KNAPPER */
+
 .project-link{
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--gold);
-  border-bottom: 1px solid transparent;
-  transition: border-color .2s ease, color .2s ease;
-}
-.project-link:hover{ border-color: var(--gold); }
+  display: inline-block;
 
-@media (max-width: 760px){
-  .project, .project:nth-child(even){ grid-template-columns: 1fr; direction: ltr; }
-}
+  width: fit-content;
 
-/* Skills marquee */
-.marquee{
-  margin-top: 5rem;
-  overflow: hidden;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 1.1rem 0;
+  background: #55c9c3;
 
-  /* Gør linjen lige så bred som hele skærmen */
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-.marquee-track{
-  display:flex;
-  gap: 3rem;
-  width: max-content;
-  animation: scroll 22s linear infinite;
-}
-.marquee-track span{
-  font-family: var(--mono);
+  color: white;
+
   font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  color: var(--paper-dim);
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  padding:
+    0.9rem
+    1.2rem;
+
+  border: 2px solid #111;
+
+  box-shadow:
+    5px 5px 0 white,
+    7px 7px 0 #111;
+}
+
+
+/* MARQUEE */
+
+.marquee{
+  width: 100vw;
+
+  margin-left:
+    calc(
+      50%
+      - 50vw
+    );
+
+  margin-top: 5rem;
+
+  overflow: hidden;
+
+  padding:
+    1.6rem
+    0;
+}
+
+.marquee-track{
+  display: flex;
+
+  width: max-content;
+
+  gap: 3rem;
+
+  animation:
+    marquee-scroll
+    22s
+    linear
+    infinite;
+}
+
+.marquee-group{
+  display: flex;
+
+  align-items: center;
+
+  gap: 3rem;
+
+  flex-shrink: 0;
+}
+
+.marquee-group span{
+  font-size:
+    clamp(
+      1.2rem,
+      2vw,
+      1.8rem
+    );
+
+  font-weight: 700;
+
   white-space: nowrap;
 }
-@keyframes scroll{
-  from{ transform: translateX(0); }
-  to{ transform: translateX(-50%); }
+
+.marquee-group .star{
+  color: var(--gold);
 }
 
-/* =========================================================
-   GALLERI
-   ========================================================= */
-.gallery{
-  columns: 3 260px;
-  column-gap: 1rem;
+@keyframes marquee-scroll{
+
+  from{
+    transform: translateX(0);
+  }
+
+  to{
+    transform:
+      translateX(
+        calc(
+          -50%
+          - 1.5rem
+        )
+      );
+  }
+
 }
-.gallery img{
-  width:100%;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-  break-inside: avoid;
-  transition: opacity .25s ease;
+
+
+/* GALLERI */
+
+.gallery-carousel{
+  position: relative;
+
+  width: 100%;
+
+  padding-bottom: 3rem;
 }
-.gallery img:hover{ opacity: 0.85; }
+
+.gallery-viewport{
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.gallery-track{
+  display: flex;
+
+  gap: 1rem;
+
+  transition:
+    transform
+    0.55s
+    ease;
+}
+
+
+/* Alle thumbnails har samme størrelse */
+
+.gallery-item{
+  flex:
+    0
+    0
+    calc((100% - 2rem) / 3);
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: var(--panel);
+
+  cursor: pointer;
+}
+
+
+/* Her bliver de beskåret i thumbnail */
+
+.gallery-item img,
+.gallery-item video{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform
+    0.3s
+    ease;
+}
+
+
+.gallery-item:hover img,
+.gallery-item:hover video{
+  transform: scale(1.03);
+}
+
+
+/* GALLERI PILE */
+
+.gallery-arrow{
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-60%);
+
+  z-index: 10;
+
+  background: transparent;
+
+  border: none;
+
+  color: var(--paper);
+
+  font-size: 3.5rem;
+
+  cursor: pointer;
+}
+
+.gallery-prev{
+  left: -2.5rem;
+}
+
+.gallery-next{
+  right: -2.5rem;
+}
+
+
+/* DOTS */
+
+.gallery-dots{
+  display: flex;
+
+  justify-content: center;
+
+  gap: 0.55rem;
+
+  margin-top: 2rem;
+}
+
+.gallery-dot{
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      242,
+      239,
+      230,
+      0.3
+    );
+}
+
+.gallery-dot.active{
+  background: var(--paper);
+}
+
 
 /* =========================================================
-   OM MIG
+   LIGHTBOX
    ========================================================= */
+
+.lightbox{
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.94
+    );
+
+  padding: 3rem;
+}
+
+
+.lightbox.open{
+  display: flex;
+}
+
+
+/* Her vises HELE billedet/videoen */
+
+.lightbox-content{
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 100%;
+
+  height: 100%;
+}
+
+
+.lightbox-content img,
+.lightbox-content video{
+  width: auto;
+
+  height: auto;
+
+  max-width: 90vw;
+
+  max-height: 88vh;
+
+  object-fit: contain;
+
+  box-shadow:
+    0
+    20px
+    60px
+    rgba(
+      0,
+      0,
+      0,
+      0.45
+    );
+}
+
+
+/* LUK-KNAP */
+
+.lightbox-close{
+  position: absolute;
+
+  top: 1.5rem;
+
+  right: 2rem;
+
+  z-index: 10000;
+
+  background: none;
+
+  border: none;
+
+  color: white;
+
+  font-size: 3rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* OM MIG */
+
 .about-grid{
-  display:grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  display: grid;
+
+  grid-template-columns:
+    0.85fr
+    1.15fr;
+
   gap: 3.5rem;
-  align-items:start;
 }
+
 .about-portrait img{
-  border-radius: 4px;
-  aspect-ratio: 4/5;
-  object-fit:cover;
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
 }
+
 .about-intro{
-  font-family: var(--display);
-  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
-  font-weight: 400;
+  font-size:
+    clamp(
+      1.3rem,
+      2.4vw,
+      1.7rem
+    );
+
   line-height: 1.4;
-  margin: 0 0 2.5rem;
 }
-.about-intro strong{ color: var(--gold); font-weight: 500; }
+
+.about-intro strong{
+  color: var(--gold);
+}
 
 .about-values{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
   gap: 2rem;
-  margin-bottom: 3rem;
 }
+
 .value h4{
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--gold);
-  margin: 0 0 0.5rem;
+
+  text-transform: uppercase;
 }
+
 .value p{
   color: var(--paper-dim);
-  line-height: 1.6;
-  margin:0;
-  font-size: 0.95rem;
-}
-.timeline-wrapper{
 
+  line-height: 1.6;
+}
+
+
+/* TIDSLINJE */
+
+.timeline-wrapper{
   width: 100%;
 
   display: flex;
@@ -352,96 +718,288 @@ a{ color: inherit; text-decoration:none; }
   justify-content: center;
 
   margin-top: 4rem;
-
 }
 
 .about-timeline{
-
   width: 100%;
 
   max-width: 1400px;
+}
 
-  height: auto;
 
-  display: block;
+/* KONTAKT */
+
+.contact{
+  text-align: center;
+}
+
+.contact .section-head{
+  display: flex;
+
+  justify-content: center;
+}
+
+.contact-lead{
+  font-size:
+    clamp(
+      1.3rem,
+      3vw,
+      1.9rem
+    );
+
+  color: var(--paper-dim);
+}
+
+.typewriter{
+  color: var(--gold);
+}
+
+.cursor{
+  color: var(--gold);
+}
+
+
+/* FOOTER */
+
+.footer{
+  max-width: var(--max);
+
+  margin: 0 auto;
+
+  padding:
+    3rem
+    var(--pad)
+    4rem;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+}
+
+.socials{
+  display: flex;
+
+  gap: 1.5rem;
+}
+
+.socials a{
+  color: var(--paper-dim);
+
+  text-transform: uppercase;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px){
+
+  .projects{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
 
 }
 
+
 @media (max-width: 760px){
-  .about-grid{ grid-template-columns: 1fr; }
-  .about-values{ grid-template-columns: 1fr; }
+
+  .gallery-item{
+    flex: 0 0 100%;
+  }
+
+  .gallery-prev{
+    left: 0.5rem;
+  }
+
+  .gallery-next{
+    right: 0.5rem;
+  }
+
+  .about-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .about-values{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px){
+
+  .projects{
+    grid-template-columns: 1fr;
+  }
+
 }
 
 /* =========================================================
-   KONTAKT
+   FORSKUDTE OVERSKRIFTER
+   Projekter = venstre
+   Galleri   = højre
+   Om mig    = venstre
+   Kontakt   = højre
    ========================================================= */
-.contact{ text-align:center; }
-.contact .section-head{ justify-content:center; }
-.contact-lead{
-.typewriter{
+
+/* Standard = venstre */
+.section .section-head {
+  width: 100%;
+  display: flex;
+}
+
+/* PROJEKTER */
+#projekter .section-head {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* GALLERI */
+#galleri .section-head {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* OM MIG */
+#om-mig .section-head {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* KONTAKT */
+#kontakt .section-head {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+
+/* MOBIL */
+@media (max-width: 760px) {
+
+  #projekter .section-head,
+  #galleri .section-head,
+  #om-mig .section-head,
+  #kontakt .section-head {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================================
+   KONTAKT - HØJRESTILLET
+   ========================================================= */
+
+#kontakt {
+  text-align: right;
+}
+
+/* Overskriften KONTAKT */
+#kontakt .section-head {
+  justify-content: flex-end;
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
+/* Typewriter + Send mig gerne en besked */
+#kontakt .contact-lead {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.4;
+}
+
+/* Kaffe?, Et projekt? osv. */
+#kontakt .typewriter {
   color: var(--gold);
   font-weight: 500;
 }
-.cursor{
-  display: inline-block;
-  margin-left: 2px;
-  color: var(--gold);
-  animation: blink 0.9s steps(1) infinite;
-}
-@keyframes blink{
-  0%, 49%  { opacity: 1; }
-  50%, 100%{ opacity: 0; }
-}
-  font-family: var(--display);
-  font-size: clamp(1.3rem, 3vw, 1.9rem);
-  color: var(--paper-dim);
-  margin: 0 0 2rem;
-}
-.contact-details{
-  display:flex;
-  flex-direction:column;
-  gap: 0.5rem;
-  align-items:center;
-}
-.contact-details a{
-  font-family: var(--display);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  border-bottom: 1px solid transparent;
-  transition: border-color .2s ease, color .2s ease;
-}
-.contact-details a:hover{ color: var(--gold); border-color: var(--gold); }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-.footer{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 3rem var(--pad) 4rem;
-  display:flex;
-  flex-wrap:wrap;
-  gap: 1.5rem;
-  align-items:center;
-  justify-content:space-between;
-  border-top: 1px solid var(--line);
+/* Mail + telefon UNDER HINANDEN */
+#kontakt .contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+
+  margin-top: 1.5rem;
 }
-.socials{ display:flex; gap: 1.5rem; }
-.socials a{
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--paper-dim);
-  transition: color .2s ease;
+
+/* Mail og telefon */
+#kontakt .contact-details a {
+
+  display: block;
+
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  color: #55c9c3;
+
+  transition: opacity 0.2s ease;
+
 }
-.socials a:hover{ color: var(--gold); }
-.copyright{
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--paper-dim);
-  margin:0;
-  width:100%;
-  order: 3;
-  opacity: 0.6;
+
+#kontakt .contact-details a:hover {
+
+  opacity: 0.7;
+
 }
-@media (min-width: 600px){ .copyright{ width:auto; order:0; } }
+
+
+/* MOBIL */
+@media (max-width: 760px) {
+
+  #kontakt,
+  #kontakt .section-head,
+  #kontakt .contact-lead {
+    text-align: left;
+  }
+
+  #kontakt .section-head {
+    justify-content: flex-start;
+  }
+
+  #kontakt .contact-lead {
+    margin-left: 0;
+  }
+
+  #kontakt .contact-details {
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-name {
+  color: #f2eee8;
+}
+
+.logo-name > span {
+  color: #d4a84f;
+}

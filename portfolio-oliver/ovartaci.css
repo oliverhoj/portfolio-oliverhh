@@ -1,0 +1,739 @@
+/* =========================================================
+   MUSEUM OVARTACI — CASE PAGE
+   ========================================================= */
+
+:root{
+  --ink: #12141C;
+  --panel: #1C1F2B;
+
+  --paper: #F2EFE6;
+  --paper-dim: #C7C3B6;
+
+  --gold: #C9A15A;
+  --teal: #55C9C3;
+
+  --line: rgba(242,239,230,0.18);
+
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --max: 1400px;
+  --pad: clamp(1.5rem, 5vw, 5rem);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+
+  background: var(--ink);
+  color: var(--paper);
+
+  font-family: var(--font);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+video{
+  display: block;
+  max-width: 100%;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.case-nav{
+  max-width: var(--max);
+
+  margin: 0 auto;
+
+  padding: 2rem var(--pad);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.case-logo{
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+
+.case-logo span{
+  color: var(--gold);
+}
+
+
+.back-link{
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  transition: opacity 0.2s ease;
+}
+
+
+.back-link:hover{
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.case-page{
+  max-width: var(--max);
+
+  margin: 0 auto;
+
+  padding: 0 var(--pad);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.case-hero{
+  padding: 5rem 0 8rem;
+}
+
+
+/* STOR OVERSKRIFT */
+
+.case-hero-title{
+  margin: 0 0 4rem;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  font-size: clamp(4.5rem, 9vw, 9rem);
+
+  font-weight: 900;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.075em;
+
+  text-transform: uppercase;
+
+  color: var(--paper);
+}
+
+
+/* VIDEO + BESKRIVELSE */
+
+.case-hero-grid{
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2.3fr)
+    minmax(250px, 1fr);
+
+  gap: clamp(2rem, 4vw, 4.5rem);
+
+  align-items: center;
+}
+
+
+/* HERO VIDEO */
+
+.case-hero-media{
+  width: 100%;
+
+  overflow: hidden;
+
+  background: var(--panel);
+
+  aspect-ratio: 16 / 10;
+}
+
+
+.case-hero-media video{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* HERO TEKST */
+
+.case-hero-description{
+  display: flex;
+  align-items: center;
+}
+
+
+.case-hero-description p{
+  margin: 0;
+
+  max-width: 360px;
+
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  color: var(--paper);
+}
+
+
+/* =========================================================
+   INDHOLD / SEKTIONER
+   ========================================================= */
+
+.case-content-section{
+  padding: 4.5rem 0;
+
+  border-top: 1px solid var(--line);
+}
+
+
+.case-content-section h2{
+  margin: 0 0 2rem;
+
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PROJEKTBESKRIVELSE + PROCES
+   ========================================================= */
+
+.case-copy{
+  max-width: 1050px;
+}
+
+
+.case-copy p{
+  margin: 0 0 1.4rem;
+
+  color: var(--paper-dim);
+
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+
+  line-height: 1.7;
+}
+
+
+.case-copy p:last-child{
+  margin-bottom: 0;
+}
+
+
+.case-copy strong{
+  color: var(--paper);
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   VÆRKTØJER
+   ========================================================= */
+
+.tools{
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.8rem;
+}
+
+
+.tools span{
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.85rem 1.2rem;
+
+  border: 1px solid var(--line);
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.tools span:hover{
+  background: var(--teal);
+
+  color: #111;
+
+  border-color: var(--teal);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   VISUEL PROCES
+   ========================================================= */
+
+.case-visuals{
+  padding: 5rem 0 7rem;
+
+  border-top: 1px solid var(--line);
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1rem;
+}
+
+
+/* BILLEDER */
+
+.visual-card{
+  position: relative;
+
+  overflow: hidden;
+
+  aspect-ratio: 1 / 1;
+
+  background: var(--panel);
+
+  cursor: zoom-in;
+}
+
+
+.visual-card img{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+
+.visual-card:hover img{
+  transform: scale(1.025);
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   RESULTAT / CTA
+   ========================================================= */
+
+.result-section{
+  padding: 7rem 0 9rem;
+
+  border-top: 1px solid var(--line);
+
+  text-align: center;
+}
+
+
+.result-section h2{
+  margin: 0 0 3rem;
+
+  font-size: clamp(3.5rem, 8vw, 8rem);
+
+  font-weight: 900;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.07em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   KNAP
+   ========================================================= */
+
+.case-button{
+  display: inline-block;
+
+  padding: 1rem 1.4rem;
+
+  background: var(--teal);
+
+  color: white;
+
+  border: 2px solid #111;
+
+  box-shadow:
+    5px 5px 0 white,
+    7px 7px 0 #111;
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.03em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.case-button:hover{
+  transform: translate(4px, 4px);
+
+  box-shadow:
+    1px 1px 0 white,
+    3px 3px 0 #111;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.case-footer{
+  max-width: var(--max);
+
+  margin: 0 auto;
+
+  padding: 3rem var(--pad) 4rem;
+
+  border-top: 1px solid var(--line);
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+
+.case-footer > a:last-child{
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+
+  transition: opacity 0.2s ease;
+}
+
+
+.case-footer > a:last-child:hover{
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.case-lightbox{
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem;
+
+  background: rgba(0,0,0,0.94);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+
+  cursor: zoom-out;
+}
+
+
+.case-lightbox.active{
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* STORT BILLEDE */
+
+.case-lightbox img{
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 92vw;
+  max-height: 90vh;
+
+  object-fit: contain;
+
+  cursor: default;
+}
+
+
+/* LUK KNAP */
+
+.case-lightbox-close{
+  position: absolute;
+
+  top: 1.5rem;
+  right: 2rem;
+
+  z-index: 10000;
+
+  padding: 0;
+
+  background: none;
+
+  border: none;
+
+  color: white;
+
+  font-family: var(--font);
+
+  font-size: 3rem;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.case-lightbox-close:hover{
+  opacity: 0.65;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px){
+
+  .case-hero-grid{
+    grid-template-columns:
+      minmax(0, 1.8fr)
+      minmax(220px, 1fr);
+
+    gap: 2rem;
+  }
+
+
+  .case-hero-description p{
+    font-size: 1.05rem;
+  }
+
+
+  .case-visuals{
+    gap: 0.75rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px){
+
+  .case-nav{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+
+  .back-link{
+    font-size: 0.65rem;
+  }
+
+
+  /* HERO */
+
+  .case-hero{
+    padding: 4rem 0 5rem;
+  }
+
+
+  .case-hero-title{
+    margin-bottom: 2.5rem;
+
+    font-size: clamp(3.4rem, 15vw, 6rem);
+
+    line-height: 0.85;
+  }
+
+
+  .case-hero-grid{
+    grid-template-columns: 1fr;
+
+    gap: 1.75rem;
+  }
+
+
+  .case-hero-media{
+    aspect-ratio: 16 / 10;
+  }
+
+
+  .case-hero-description p{
+    max-width: 100%;
+
+    font-size: 1.05rem;
+  }
+
+
+  /* CONTENT */
+
+  .case-content-section{
+    padding: 3.5rem 0;
+  }
+
+
+  .case-copy p{
+    font-size: 1rem;
+
+    line-height: 1.65;
+  }
+
+
+  /* TOOLS */
+
+  .tools{
+    gap: 0.6rem;
+  }
+
+
+  .tools span{
+    padding: 0.75rem 0.9rem;
+
+    font-size: 0.7rem;
+  }
+
+
+  /* VISUALS */
+
+  .case-visuals{
+    padding: 4rem 0 5rem;
+
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+
+  /* RESULT */
+
+  .result-section{
+    padding: 5rem 0 6rem;
+  }
+
+
+  .result-section h2{
+    font-size: clamp(3rem, 14vw, 5rem);
+
+    margin-bottom: 2.5rem;
+  }
+
+
+  /* FOOTER */
+
+  .case-footer{
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 1rem;
+  }
+
+
+  /* LIGHTBOX */
+
+  .case-lightbox{
+    padding: 1.5rem;
+  }
+
+
+  .case-lightbox img{
+    max-width: 95vw;
+    max-height: 85vh;
+  }
+
+
+  .case-lightbox-close{
+    top: 1rem;
+    right: 1.25rem;
+
+    font-size: 2.6rem;
+  }
+
+}

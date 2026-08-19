@@ -1,223 +1,876 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OLIVER HØJ — Portfolio</title>
-<meta name="description" content="Portfolio for OLIVER HØJ — kort beskrivelse af hvad du laver.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OLIVER HØJ — Portfolio</title>
+
+  <meta
+    name="description"
+    content="Portfolio for Oliver Høj."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
+
 <body>
 
-<!-- ============================================= -->
-<!-- NAVIGATION -->
-<!-- ============================================= -->
-<header class="topbar">
-  <a href="#top" class="logo">OLIVER<span>HØJ</span></a>
-  <button class="burger" id="burger" aria-label="Åbn menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <nav class="nav" id="nav">
-    <a href="#projekter">Projekter</a>
-    <a href="#galleri">Galleri</a>
-    <a href="#om-mig">Om mig</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
-</header>
 
-<!-- ============================================= -->
-<!-- HERO -->
-<!-- ============================================= -->
-<section class="hero" id="top">
+  <!-- ============================================= -->
+  <!-- NAVIGATION -->
+  <!-- ============================================= -->
 
-  <img class="hero-image" src="billeder/gq.png" alt="Oliver Høj">
+  <header class="topbar">
 
-  <div class="hero-overlay"></div>
+    <a href="#top" class="logo">
+  <img src="billeder/logo.png" alt="OH logo" class="logo-icon">
+  <span class="logo-name">OLIVER<span>HØJ</span></span>
+</a>
 
-  <div class="hero-content">
-    <p class="eyebrow">Portfolio</p>
-    <h1 class="hero-title">OLIVER HØJ</h1>
-    <p class="hero-tagline">GRAFISK DESIGN &nbsp;&nbsp;&nbsp; VISUAL STORYTELLER</p>
-    <a href="#projekter" class="scroll-hint">
-      Se projekter <span>↓</span>
-    </a>
-  </div>
 
-</section>
+    <button
+      class="burger"
+      id="burger"
+      aria-label="Åbn menu"
+      aria-expanded="false"
+    >
 
-<!-- ============================================= -->
-<!-- PROJEKTER -->
-<!-- ============================================= -->
-<section class="section" id="projekter">
-  <div class="section-head">
-    <h2>Projekter</h2>
-  </div>
+      <span></span>
+      <span></span>
+      <span></span>
 
-  <div class="projects">
+    </button>
 
-    <!-- PROJEKT 1 — kopiér denne <article>-blok for hvert nyt projekt -->
-    <article class="project">
-      <div class="project-media">
-        <!-- Video-projekt: brug <video>. Billede-projekt: erstat med <img src="billeder/projekt1.jpg" alt="Beskrivelse"> -->
-        <video autoplay muted loop playsinline preload="auto">
-        <source src="video/overtaci.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="project-info">
-        <h3>Museum Ovartaci</h3>
-        <p>Vi udviklede en digital og interaktiv oplevelse til Museum Ovartaci, der gennem storytelling og interaktion gjorde Ovartacis historie mere levende og engagerende for museets besøgende.</p>
-        <!-- Museum Ovartaci -->
-        <a href="https://iamjacob.github.io/ovartaci/"
-           class="project-link"
-           target="_blank"
-          rel="noopener"> 
-          Se mere →
-        </a>
-      </div>
-    </article>
 
-    <!-- PROJEKT 2 -->
-    <article class="project">
-      <div class="project-media">
-        <video autoplay muted loop playsinline preload="auto">
-        <source src="video/storcenter.mp4" type="video/mp4">
-      </video>
-      </div>
-      <div class="project-info">
-        <h3>Storcenter Nord</h3>
-        <p>Vi udviklede en interaktiv touchskærm til akvariet i Storcenter Nord, der gennem leg, animation og interaktion gør læring om fisk sjovere for børn.</p>
-        <a href="https://oliverhoj.github.io/ekasmen-exd-storcenternord-oliver/"
-           class="project-link"
-           target="_blank"
-          rel="noopener"> 
-          Se mere →
-        </a>
-      </div>
-    </article>
+    <nav
+      class="nav"
+      id="nav"
+    >
 
-    <!-- PROJEKT 3 -->
-    <article class="project">
-      <video autoplay muted loop playsinline preload="auto">
-        <source src="video/lumina.mp4" type="video/mp4">
-      </video>
-      <div class="project-info">
-        <h3>Lumina Audio</h3>
-        <p>Første års eksamens projekt skulle vi designe en hjemmeside til en fiktiv højtaler virksomhed</p>
-        <a href="#" class="project-link">Se mere →</a>
-      </div>
-    </article>
+      <a href="#projekter">
+        Projekter
+      </a>
 
-  </div>
+      <a href="#galleri">
+        Galleri
+      </a>
 
-  <!-- VÆRKTØJER / SKILLS — ryk selv navnene til/fra -->
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>FIGMA</span><span>PHOTOSHOP</span><span>ILLUSTRATOR</span><span>ADOBE PAKKEN</span>
-      <span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>FIGMA</span><span>PHOTOSHOP</span><span>ILLUSTRATOR</span><span>ADOBE PAKKEN</span>
-      <span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>FIGMA</span><span>PHOTOSHOP</span><span>ILLUSTRATOR</span><span>ADOBE PAKKEN</span>
-      <span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>FIGMA</span><span>PHOTOSHOP</span><span>ILLUSTRATOR</span><span>ADOBE PAKKEN</span>
-    </div>
-  </div>
-</section>
+      <a href="#om-mig">
+        Om mig
+      </a>
 
-<!-- ============================================= -->
-<!-- GALLERI -->
-<!-- ============================================= -->
-<section class="section" id="galleri">
-  <div class="section-head">
-    <h2>Galleri</h2>
-  </div>
+      <a href="#kontakt">
+        Kontakt
+      </a>
 
-  <!-- Tilføj/fjern <img>-linjer efter behov. Alt-teksten er til skærmlæsere, skriv en kort beskrivelse. -->
-  <div class="gallery">
-    <img src="billeder/gq.png" alt="Beskrivelse af billede 1">
-    <img src="billeder/peaky.png" alt="Beskrivelse af billede 2">
-  </div>
-</section>
+    </nav>
 
-<!-- ============================================= -->
-<!-- OM MIG -->
-<!-- ============================================= -->
-<section class="section about" id="om-mig">
- <div class="section-head">
-  <h2>Om mig</h2>
-</div>
+  </header>
 
-  <div class="about-grid">
-    <div class="about-portrait">
-      <img src="billeder/portræt.jpg" alt="Portræt af mig som jeg ikke har endnu">
-    </div>
 
-    <div class="about-text">
-      <p class="about-intro">
-        Jeg hedder <strong>Oliver Høj, 26 år</strong>. Bosat i Aarhus og glad for at skabe visuelle oplevelser.
+
+  <!-- ============================================= -->
+  <!-- HERO -->
+  <!-- ============================================= -->
+
+  <section
+    class="hero"
+    id="top"
+  >
+
+    <img
+      class="hero-image"
+      src="billeder/gq.png"
+      alt="Oliver Høj"
+    >
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+      <p class="eyebrow">
+        Portfolio
       </p>
 
-      <div class="about-values">
-        <div class="value">
-          <h4>Passion</h4>
-          <p>Jeg brænder for idéudvikling og for at skabe stærke koncepter. Jeg elsker at finde den gode historie bag en idé og bruge storytelling til at gøre den levende, engagerende og visuelt interessant.</p>
+
+      <h1 class="hero-title">
+        OLIVER HØJ
+      </h1>
+
+
+      <p class="hero-tagline">
+        GRAFISK DESIGN
+        &nbsp;&nbsp;&nbsp;
+        VISUAL STORYTELLER
+      </p>
+
+
+      <a
+        href="#projekter"
+        class="scroll-hint"
+      >
+        Se projekter
+        <span>↓</span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ============================================= -->
+  <!-- PROJEKTER -->
+  <!-- ============================================= -->
+
+  <section
+    class="section"
+    id="projekter"
+  >
+
+    <div class="section-head">
+
+      <h2>
+        PROJEKTER
+      </h2>
+
+    </div>
+
+
+    <div class="projects">
+
+
+      <!-- ========================================= -->
+      <!-- PROJEKT 1 — OVARTACI -->
+      <!-- ========================================= -->
+
+      <article class="project">
+
+
+        <div class="project-media">
+
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+
+            <source
+              src="video/overtaci.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
         </div>
-        <div class="value">
-          <h4>Præcision</h4>
-          <p>Detaljer betyder meget for mig. Farver, komposition, streg og layout bliver nøje overvejet. Det er de små elementer, der giver projekterne liv og får idéer til at skinne.</p>
+
+
+        <div class="project-info">
+
+          <h3>
+            Museum Ovartaci
+          </h3>
+
+
+          <a
+            href="ovartaci.html"
+            class="project-link"
+          >
+            SE MERE
+          </a>
+
         </div>
-        <div class="value">
-          <h4>Personlighed</h4>
-          <p>Som person er jeg social, nysgerrig, glad og humoristisk. Jeg elsker alt, der har med musik, kreativitet, kultur og mad at gøre. Selv små ting kan få mig til at smile, og jeg bliver let begejstret og inspireret af alt det, der sker omkring mig.</p>
+
+      </article>
+
+
+
+      <!-- ========================================= -->
+      <!-- PROJEKT 2 — STORCENTER NORD -->
+      <!-- ========================================= -->
+
+      <article class="project">
+
+
+        <div class="project-media">
+
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+
+            <source
+              src="video/storcenter.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
         </div>
-        <div class="value">
-          <h4>Proces</h4>
-          <p>Jeg elsker processen. Fra idé og koncept, til færdigt resultat. At eksperimentere, teste og finde kreative løsninger er en vigtig del af, hvordan jeg arbejder.</p>
+
+
+        <div class="project-info">
+
+          <h3>
+            Storcenter Nord
+          </h3>
+
+
+          <a
+            href="https://oliverhoj.github.io/ekasmen-exd-storcenternord-oliver/"
+            class="project-link"
+            target="_blank"
+            rel="noopener"
+          >
+            SE MERE
+          </a>
+
         </div>
+
+      </article>
+
+
+
+      <!-- ========================================= -->
+      <!-- PROJEKT 3 — LUMINA -->
+      <!-- ========================================= -->
+
+      <article class="project">
+
+
+        <div class="project-media">
+
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+
+            <source
+              src="video/lumina.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+        </div>
+
+
+        <div class="project-info">
+
+          <h3>
+            Lumina Audio
+          </h3>
+
+
+          <a
+            href="#"
+            class="project-link"
+          >
+            SE MERE
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+
+    <!-- ============================================= -->
+    <!-- SKILLS MARQUEE -->
+    <!-- ============================================= -->
+
+    <div class="marquee">
+
+      <div class="marquee-track">
+
+
+        <div class="marquee-group">
+
+          <span>HTML</span>
+          <span class="star">✦</span>
+
+          <span>CSS</span>
+          <span class="star">✦</span>
+
+          <span>JAVASCRIPT</span>
+          <span class="star">✦</span>
+
+          <span>FIGMA</span>
+          <span class="star">✦</span>
+
+          <span>PHOTOSHOP</span>
+          <span class="star">✦</span>
+
+          <span>ILLUSTRATOR</span>
+          <span class="star">✦</span>
+
+          <span>PREMIERE PRO</span>
+          <span class="star">✦</span>
+
+        </div>
+
+
+
+        <div
+          class="marquee-group"
+          aria-hidden="true"
+        >
+
+          <span>HTML</span>
+          <span class="star">✦</span>
+
+          <span>CSS</span>
+          <span class="star">✦</span>
+
+          <span>JAVASCRIPT</span>
+          <span class="star">✦</span>
+
+          <span>FIGMA</span>
+          <span class="star">✦</span>
+
+          <span>PHOTOSHOP</span>
+          <span class="star">✦</span>
+
+          <span>ILLUSTRATOR</span>
+          <span class="star">✦</span>
+
+          <span>PREMIERE PRO</span>
+          <span class="star">✦</span>
+
+        </div>
+
+
       </div>
-    </div> <!-- ← luk about-text -->
-  </div> <!-- ← luk about-grid -->
 
-  <!-- TIDSLINJE / CV -->
-  <div class="timeline-wrapper">
-    <img class="about-timeline" src="billeder/B878646E-54BE-42F8-8D4C-1D28B3645513.png" alt="Tidslinje over uddannelse og erfaring">
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ============================================= -->
+  <!-- GALLERI -->
+  <!-- ============================================= -->
+
+  <section
+    class="section"
+    id="galleri"
+  >
+
+
+    <div class="section-head">
+
+      <h2>
+        GALLERI
+      </h2>
+
+    </div>
+
+
+
+    <div class="gallery-carousel">
+
+
+      <!-- VENSTRE PIL -->
+
+      <button
+        class="gallery-arrow gallery-prev"
+        aria-label="Forrige billede"
+      >
+        ‹
+      </button>
+
+
+
+      <!-- GALLERI VINDUE -->
+
+      <div class="gallery-viewport">
+
+
+        <div class="gallery-track">
+
+
+          <!-- ========================================= -->
+          <!-- 1 — VIDEO 1 -->
+          <!-- ========================================= -->
+
+          <div
+            class="gallery-item"
+            onclick="openLightbox(this)"
+          >
+
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            >
+
+              <source
+                src="video/galleri1.mp4"
+                type="video/mp4"
+              >
+
+            </video>
+
+          </div>
+
+
+
+          <!-- ========================================= -->
+          <!-- 2 — GQ -->
+          <!-- ========================================= -->
+
+          <div
+            class="gallery-item"
+            onclick="openLightbox(this)"
+          >
+
+            <img
+              src="billeder/gq.png"
+              alt="Grafisk arbejde"
+            >
+
+          </div>
+
+
+
+          <!-- ========================================= -->
+          <!-- 3 — VIDEO 2 -->
+          <!-- ========================================= -->
+
+          <div
+            class="gallery-item"
+            onclick="openLightbox(this)"
+          >
+
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            >
+
+              <source
+                src="video/galleri2.mp4"
+                type="video/mp4"
+              >
+
+            </video>
+
+          </div>
+
+
+
+          <!-- ========================================= -->
+          <!-- 4 — PEAKY -->
+          <!-- ========================================= -->
+
+          <div
+            class="gallery-item"
+            onclick="openLightbox(this)"
+          >
+
+            <img
+              src="billeder/peaky.png"
+              alt="Grafisk arbejde"
+            >
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- HØJRE PIL -->
+
+      <button
+        class="gallery-arrow gallery-next"
+        aria-label="Næste billede"
+      >
+        ›
+      </button>
+
+
+
+      <!-- DOTS -->
+
+      <div class="gallery-dots">
+
+        <button
+          class="gallery-dot active"
+          aria-label="Galleri side 1"
+        ></button>
+
+
+        <button
+          class="gallery-dot"
+          aria-label="Galleri side 2"
+        ></button>
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ============================================= -->
+  <!-- OM MIG -->
+  <!-- ============================================= -->
+
+  <section
+    class="section about"
+    id="om-mig"
+  >
+
+
+    <div class="section-head">
+
+      <h2>
+        OM MIG
+      </h2>
+
+    </div>
+
+
+
+    <div class="about-grid">
+
+
+      <div class="about-portrait">
+
+        <img
+          src="billeder/portræt.jpg"
+          alt="Portræt af Oliver Høj"
+        >
+
+      </div>
+
+
+
+      <div class="about-text">
+
+
+        <p class="about-intro">
+
+          Jeg hedder
+
+          <strong>
+            Oliver Høj, 26 år
+          </strong>.
+
+          Bosat i Aarhus og glad for at skabe visuelle oplevelser.
+
+        </p>
+
+
+
+        <div class="about-values">
+
+
+          <!-- PASSION -->
+
+          <div class="value">
+
+            <h4>
+              Passion
+            </h4>
+
+            <p>
+              Jeg brænder for idéudvikling og for at skabe stærke
+              koncepter. Jeg elsker at finde den gode historie bag
+              en idé og bruge storytelling til at gøre den levende,
+              engagerende og visuelt interessant.
+            </p>
+
+          </div>
+
+
+
+          <!-- PRÆCISION -->
+
+          <div class="value">
+
+            <h4>
+              Præcision
+            </h4>
+
+            <p>
+              Detaljer betyder meget for mig. Farver, komposition,
+              streg og layout bliver nøje overvejet. Det er de små
+              elementer, der giver projekterne liv og får idéer til
+              at skinne.
+            </p>
+
+          </div>
+
+
+
+          <!-- PERSONLIGHED -->
+
+          <div class="value">
+
+            <h4>
+              Personlighed
+            </h4>
+
+            <p>
+              Som person er jeg social, nysgerrig, glad og humoristisk.
+              Jeg elsker alt, der har med musik, kreativitet, kultur
+              og mad at gøre. Selv små ting kan få mig til at smile,
+              og jeg bliver let begejstret og inspireret af alt det,
+              der sker omkring mig.
+            </p>
+
+          </div>
+
+
+
+          <!-- PROCES -->
+
+          <div class="value">
+
+            <h4>
+              Proces
+            </h4>
+
+            <p>
+              Jeg elsker processen. Fra idé og koncept til færdigt
+              resultat. At eksperimentere, teste og finde kreative
+              løsninger er en vigtig del af, hvordan jeg arbejder.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- ============================================= -->
+    <!-- TIDSLINJE -->
+    <!-- ============================================= -->
+
+    <div class="timeline-wrapper">
+
+      <img
+        class="about-timeline"
+        src="billeder/B878646E-54BE-42F8-8D4C-1D28B3645513.png"
+        alt="Tidslinje over uddannelse og erfaring"
+      >
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ============================================= -->
+  <!-- KONTAKT -->
+  <!-- ============================================= -->
+
+  <section
+    class="section contact"
+    id="kontakt"
+  >
+
+
+    <div class="section-head">
+
+      <h2>
+        KONTAKT
+      </h2>
+
+    </div>
+
+
+
+    <p class="contact-lead">
+
+
+      <span class="typewriter">
+
+        <span id="typewriter-text"></span>
+
+        <span class="cursor">
+          |
+        </span>
+
+      </span>
+
+
+      Send mig gerne en besked.
+
+
+    </p>
+
+
+
+    <div class="contact-details">
+
+
+      <a href="mailto:oliverholt7@icloud.com">
+        oliverholt7@icloud.com
+      </a>
+
+
+      <a href="tel:+4560181450">
+        +45 60 18 14 50
+      </a>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ============================================= -->
+  <!-- FOOTER -->
+  <!-- ============================================= -->
+
+  <footer class="footer">
+
+
+   <a href="#top" class="logo">
+  <img src="billeder/logo.png" alt="OH logo" class="logo-icon">
+  <span class="logo-name">OLIVER<span>HØJ</span></span>
+</a>
+
+
+
+    <div class="socials">
+
+
+      <a
+        href="https://instagram.com/oliverhoj"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+
+      <a
+        href="https://linkedin.com/in/dit-navn"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn
+      </a>
+
+
+      <a href="mailto:oliverholt7@icloud.com">
+        Mail
+      </a>
+
+
+    </div>
+
+
+
+    <p class="copyright">
+
+      ©
+      <span id="year"></span>
+      Oliver Høj
+
+    </p>
+
+
+  </footer>
+
+
+
+  <!-- ============================================= -->
+  <!-- LIGHTBOX -->
+  <!-- ============================================= -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    onclick="closeLightbox(event)"
+  >
+
+
+    <button
+      class="lightbox-close"
+      onclick="closeLightbox(event)"
+      aria-label="Luk"
+    >
+      ×
+    </button>
+
+
+    <div
+      class="lightbox-content"
+      id="lightbox-content"
+    ></div>
+
+
   </div>
 
-</section>
 
 
+  <script src="script.js"></script>
 
-<!-- ============================================= -->
-<!-- KONTAKT -->
-<!-- ============================================= -->
-<section class="section contact" id="kontakt">
-  <div class="section-head">
-    <h2>Kontakt</h2>
-  </div>
 
-  <p class="contact-lead">
-  <span class="typewriter"><span id="typewriter-text"></span><span class="cursor">|</span></span>
-  Send mig gerne en besked.
-</p>
-
-  <div class="contact-details">
-    <a href="mailto:oliverholt7@icloud.com">oliverholt7@icloud.com</a>
-    <a href="tel:+4560181450">+45 60 18 14 50</a>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- FOOTER -->
-<!-- ============================================= -->
-<footer class="footer">
-  <a href="#top" class="logo">OLIVER<span>HØJ</span></a>
-  <div class="socials">
-    <a href="https://instagram.com/oliverhoj" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://linkedin.com/in/dit-navn" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="mailto:oliverholt7@icloud.com">Mail</a>
-  </div>
-  <p class="copyright">© <span id="year"></span> Oliver Høj</p>
-</footer>
-
-<script src="script.js"></script>
 </body>
+
 </html>

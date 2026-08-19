@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Museum Ovartaci — Oliver Høj</title>
+
+  <meta
+    name="description"
+    content="Museum Ovartaci — SwipeStories. Caseprojekt af Oliver Høj."
+  >
+
+  <link rel="stylesheet" href="ovartaci.css">
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="case-nav">
+
+    <a href="index.html" class="case-logo">
+      OLIVER<span>HØJ</span>
+    </a>
+
+    <a href="index.html#projekter" class="back-link">
+      ← TILBAGE TIL PROJEKTER
+    </a>
+
+  </header>
+
+
+  <main class="case-page">
+
+    <!-- HERO -->
+    <!-- =========================================
+     HERO
+========================================= -->
+
+<section class="case-hero">
+
+  <h1 class="case-hero-title">
+    MUSEUM OVARTACI
+  </h1>
+
+
+  <div class="case-hero-grid">
+
+    <!-- VIDEO -->
+    <div class="case-hero-media">
+
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source
+          src="video/overtaci.mp4"
+          type="video/mp4"
+        >
+      </video>
+
+    </div>
+
+
+    <!-- KORT BESKRIVELSE -->
+    <div class="case-hero-description">
+
+      <p>
+        En interaktiv digital oplevelse, der gør
+        Ovartacis historie mere levende og engagerende
+        gennem storytelling, illustrationer og animation.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- PROJEKTBESKRIVELSE -->
+    <section class="case-content-section">
+
+      <h2>
+        PROJEKTBESKRIVELSE
+      </h2>
+
+      <div class="case-copy">
+
+        <p>
+          Museum Ovartaci formidler historien om Ovartaci gennem kunst og personlige
+          fortællinger om blandt andet identitet, isolation og psykisk sygdom.
+          I projektet undersøgte vi, hvordan museets fortælling kunne gøres mere
+          engagerende for yngre besøgende gennem en digital og interaktiv oplevelse.
+        </p>
+
+        <p>
+          Vores research viste, at yngre besøgende i højere grad reagerede på visuelle
+          elementer og bevægede sig hurtigere gennem teksttunge dele af udstillingen.
+          Resultatet blev <strong>SwipeStories</strong> – en digital tidslinje, der
+          guider brugeren gennem Ovartacis liv ved hjælp af storytelling, illustrationer,
+          animationer og et intuitivt scroll-baseret flow.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCES -->
+    <section class="case-content-section">
+
+      <h2>
+        PROCES
+      </h2>
+
+      <div class="case-copy">
+
+        <p>
+          Projektet tog udgangspunkt i <strong>Double Diamond-modellen</strong>,
+          hvor vi arbejdede fra research og brugerindsigter til idéudvikling,
+          prototype og test. Gennem observationer og interviews opdagede vi,
+          at yngre besøgende især blev fanget af visuelle elementer frem for lange tekster.
+        </p>
+
+        <p>
+          På baggrund af vores research udviklede vi konceptet
+          <strong>SwipeStories</strong> – en interaktiv tidslinje, hvor storytelling,
+          illustrationer og animationer formidler Ovartacis liv på en mere levende
+          og engagerende måde.
+        </p>
+
+        <p>
+          Undervejs arbejdede vi iterativt med wireframes, storyboard, user flows
+          og brugertests, som blev brugt til løbende at forbedre oplevelsen.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- VÆRKTØJER -->
+    <section class="case-content-section">
+
+      <h2>
+        VÆRKTØJER
+      </h2>
+
+      <div class="tools">
+
+        <span>FIGMA</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JAVASCRIPT</span>
+        <span>SVG</span>
+        <span>ILLUSTRATOR</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- BILLEDER -->
+    <section class="case-visuals">
+
+      <div class="visual-card">
+        <img
+          src="billeder/storyboard.png"
+          alt="Procesmateriale fra Museum Ovartaci"
+        >
+      </div>
+
+      <div class="visual-card">
+        <img
+          src="billeder/wireframe.png"
+          alt="Wireframes og idéudvikling til Museum Ovartaci"
+        >
+      </div>
+
+      <div class="visual-card">
+        <img
+          src="billeder/double dimond.png"
+          alt="Designproces til Museum Ovartaci"
+        >
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="result-section">
+
+      <h2>
+        SE SWIPESTORIES
+      </h2>
+
+      <a
+        href="https://iamjacob.github.io/ovartaci/"
+        target="_blank"
+        rel="noopener"
+        class="case-button"
+      >
+        PRØV DEN SELV 
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="case-footer">
+
+    <a href="index.html" class="case-logo">
+      OLIVER<span>HØJ</span>
+    </a>
+
+    <a href="index.html#projekter">
+      ← TILBAGE TIL PROJEKTER
+    </a>
+
+  </footer>
+
+
+  <!-- LIGHTBOX -->
+  <div class="case-lightbox" id="case-lightbox">
+
+    <button
+      class="case-lightbox-close"
+      id="case-lightbox-close"
+      aria-label="Luk billede"
+    >
+      ×
+    </button>
+
+    <img
+      id="case-lightbox-image"
+      src=""
+      alt=""
+    >
+
+  </div>
+
+
+  <script>
+
+    const visualCards = document.querySelectorAll(".visual-card");
+    const caseLightbox = document.getElementById("case-lightbox");
+    const caseLightboxImage = document.getElementById("case-lightbox-image");
+    const caseLightboxClose = document.getElementById("case-lightbox-close");
+
+    visualCards.forEach(card => {
+
+      card.addEventListener("click", () => {
+
+        const image = card.querySelector("img");
+
+        caseLightboxImage.src = image.src;
+        caseLightboxImage.alt = image.alt;
+
+        caseLightbox.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+
+    function closeCaseLightbox() {
+
+      caseLightbox.classList.remove("active");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    caseLightboxClose.addEventListener("click", closeCaseLightbox);
+
+
+    caseLightbox.addEventListener("click", event => {
+
+      if (event.target === caseLightbox) {
+        closeCaseLightbox();
+      }
+
+    });
+
+
+    document.addEventListener("keydown", event => {
+
+      if (event.key === "Escape") {
+        closeCaseLightbox();
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
