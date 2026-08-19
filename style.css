@@ -1081,3 +1081,13 @@ a{
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =========================================================
+   MINDRE LUFT FØR OM MIG OG KONTAKT
+   ========================================================= */
+
+#om-mig,
+#kontakt {
+  padding-top: 4.5rem;
+}
