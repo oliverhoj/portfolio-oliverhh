@@ -22,6 +22,10 @@
 }
 
 
+/* =========================================================
+   GENERELT
+   ========================================================= */
+
 *{
   box-sizing: border-box;
 }
@@ -32,10 +36,13 @@ html{
 
 body{
   margin: 0;
+
   background: var(--ink);
   color: var(--paper);
+
   font-family: var(--body);
   font-weight: 400;
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -51,10 +58,13 @@ a{
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .topbar{
   position: fixed;
+
   top: 0;
   left: 0;
   right: 0;
@@ -70,44 +80,84 @@ a{
   mix-blend-mode: difference;
 }
 
+
 .logo{
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
   font-family: var(--display);
+
   font-size: 1.15rem;
+
   letter-spacing: 0.02em;
+
   font-weight: 500;
+
+  text-decoration: none;
 }
 
-.logo span{
-  color: var(--gold);
-  mix-blend-mode: normal;
+
+.logo-icon{
+  width: 32px;
+  height: 32px;
+
+  object-fit: contain;
+
+  display: block;
 }
+
+
+.logo-name{
+  color: #f2eee8;
+}
+
+
+.logo-name > span{
+  color: #d4a84f;
+}
+
 
 .nav{
   display: flex;
+
   gap: 2.25rem;
 }
 
+
 .nav a{
   font-family: var(--mono);
+
   font-size: 0.9rem;
+
   letter-spacing: 0.09em;
+
   text-transform: uppercase;
 
   padding-bottom: 3px;
 
   border-bottom: 1px solid transparent;
+
+  transition:
+    border-color 0.2s ease,
+    opacity 0.2s ease;
 }
+
 
 .nav a:hover{
   border-color: currentColor;
 }
+
 
 .burger{
   display: none;
 }
 
 
-/* HERO */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
   position: relative;
@@ -120,8 +170,10 @@ a{
   overflow: hidden;
 }
 
+
 .hero-image{
   position: absolute;
+
   inset: 0;
 
   width: 100%;
@@ -132,8 +184,10 @@ a{
   z-index: 0;
 }
 
+
 .hero-overlay{
   position: absolute;
+
   inset: 0;
 
   background:
@@ -147,18 +201,20 @@ a{
   z-index: 1;
 }
 
+
 .hero-content{
   position: relative;
 
   z-index: 2;
 
+  width: 100%;
+
   padding:
     0
     var(--pad)
     4.5rem;
-
-  width: 100%;
 }
+
 
 .eyebrow{
   font-size: 0.75rem;
@@ -168,9 +224,14 @@ a{
   text-transform: uppercase;
 
   color: var(--gold);
+
+  margin-bottom: 0.75rem;
 }
 
+
 .hero-title{
+  margin: 0;
+
   font-weight: 700;
 
   font-size:
@@ -182,12 +243,13 @@ a{
 
   line-height: 0.92;
 
-  margin: 0;
-
   letter-spacing: -0.04em;
 }
 
+
 .hero-tagline{
+  margin-top: 1.25rem;
+
   font-size:
     clamp(
       0.75rem,
@@ -202,8 +264,11 @@ a{
   color: var(--paper-dim);
 }
 
+
 .scroll-hint{
   display: inline-flex;
+
+  align-items: center;
 
   margin-top: 2.5rem;
 
@@ -215,7 +280,9 @@ a{
 }
 
 
-/* SECTIONS */
+/* =========================================================
+   SECTIONS
+   ========================================================= */
 
 .section{
   max-width: var(--max);
@@ -228,12 +295,19 @@ a{
     5rem;
 }
 
+
 .section-head{
+  width: 100%;
+
+  display: flex;
+
   margin-bottom: 4.5rem;
 }
 
+
 .section-head h2{
   color: #F2C879;
+
   font-weight: 900;
 
   font-size:
@@ -253,16 +327,49 @@ a{
 }
 
 
-/* PROJEKTER */
+/* =========================================================
+   FORSKUDTE OVERSKRIFTER
+   ========================================================= */
+
+#projekter .section-head{
+  justify-content: flex-start;
+  text-align: left;
+}
+
+
+#galleri .section-head{
+  justify-content: flex-end;
+  text-align: right;
+}
+
+
+#om-mig .section-head{
+  justify-content: flex-start;
+  text-align: left;
+}
+
+
+#kontakt .section-head{
+  justify-content: flex-end;
+  text-align: right;
+
+  margin-bottom: 3rem;
+}
+
+
+/* =========================================================
+   PROJEKTER
+   ========================================================= */
 
 .projects{
   display: grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(3, 1fr);
 
   gap: 2rem;
 }
+
 
 .project{
   display: flex;
@@ -272,6 +379,7 @@ a{
   gap: 1rem;
 }
 
+
 .project-media{
   overflow: hidden;
 
@@ -280,6 +388,7 @@ a{
   background: var(--panel);
 }
 
+
 .project-media video,
 .project-media img{
   width: 100%;
@@ -287,6 +396,7 @@ a{
 
   object-fit: cover;
 }
+
 
 .project-info h3{
   font-size:
@@ -302,6 +412,7 @@ a{
     0.75rem;
 }
 
+
 .project-info p{
   color: var(--paper-dim);
 
@@ -309,7 +420,9 @@ a{
 }
 
 
-/* KNAPPER */
+/* =========================================================
+   KNAPPER
+   ========================================================= */
 
 .project-link{
   display: inline-block;
@@ -335,10 +448,25 @@ a{
   box-shadow:
     5px 5px 0 white,
     7px 7px 0 #111;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 
-/* MARQUEE */
+.project-link:hover{
+  transform: translate(4px, 4px);
+
+  box-shadow:
+    1px 1px 0 white,
+    3px 3px 0 #111;
+}
+
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
 
 .marquee{
   width: 100vw;
@@ -358,6 +486,7 @@ a{
     0;
 }
 
+
 .marquee-track{
   display: flex;
 
@@ -372,6 +501,7 @@ a{
     infinite;
 }
 
+
 .marquee-group{
   display: flex;
 
@@ -381,6 +511,7 @@ a{
 
   flex-shrink: 0;
 }
+
 
 .marquee-group span{
   font-size:
@@ -395,9 +526,11 @@ a{
   white-space: nowrap;
 }
 
+
 .marquee-group .star{
   color: var(--gold);
 }
+
 
 @keyframes marquee-scroll{
 
@@ -418,7 +551,9 @@ a{
 }
 
 
-/* GALLERI */
+/* =========================================================
+   GALLERI
+   ========================================================= */
 
 .gallery-carousel{
   position: relative;
@@ -428,11 +563,13 @@ a{
   padding-bottom: 3rem;
 }
 
+
 .gallery-viewport{
   width: 100%;
 
   overflow: hidden;
 }
+
 
 .gallery-track{
   display: flex;
@@ -445,8 +582,6 @@ a{
     ease;
 }
 
-
-/* Alle thumbnails har samme størrelse */
 
 .gallery-item{
   flex:
@@ -463,8 +598,6 @@ a{
   cursor: pointer;
 }
 
-
-/* Her bliver de beskåret i thumbnail */
 
 .gallery-item img,
 .gallery-item video{
@@ -486,7 +619,9 @@ a{
 }
 
 
-/* GALLERI PILE */
+/* =========================================================
+   GALLERI PILE
+   ========================================================= */
 
 .gallery-arrow{
   position: absolute;
@@ -508,16 +643,20 @@ a{
   cursor: pointer;
 }
 
+
 .gallery-prev{
   left: -2.5rem;
 }
+
 
 .gallery-next{
   right: -2.5rem;
 }
 
 
-/* DOTS */
+/* =========================================================
+   DOTS
+   ========================================================= */
 
 .gallery-dots{
   display: flex;
@@ -528,6 +667,7 @@ a{
 
   margin-top: 2rem;
 }
+
 
 .gallery-dot{
   width: 8px;
@@ -547,6 +687,7 @@ a{
       0.3
     );
 }
+
 
 .gallery-dot.active{
   background: var(--paper);
@@ -587,8 +728,6 @@ a{
 }
 
 
-/* Her vises HELE billedet/videoen */
-
 .lightbox-content{
   display: flex;
 
@@ -605,11 +744,9 @@ a{
 .lightbox-content img,
 .lightbox-content video{
   width: auto;
-
   height: auto;
 
   max-width: 90vw;
-
   max-height: 88vh;
 
   object-fit: contain;
@@ -626,8 +763,6 @@ a{
     );
 }
 
-
-/* LUK-KNAP */
 
 .lightbox-close{
   position: absolute;
@@ -652,7 +787,9 @@ a{
 }
 
 
-/* OM MIG */
+/* =========================================================
+   OM MIG
+   ========================================================= */
 
 .about-grid{
   display: grid;
@@ -664,11 +801,13 @@ a{
   gap: 3.5rem;
 }
 
+
 .about-portrait img{
   aspect-ratio: 4 / 5;
 
   object-fit: cover;
 }
+
 
 .about-intro{
   font-size:
@@ -681,9 +820,11 @@ a{
   line-height: 1.4;
 }
 
+
 .about-intro strong{
   color: var(--gold);
 }
+
 
 .about-values{
   display: grid;
@@ -695,11 +836,13 @@ a{
   gap: 2rem;
 }
 
+
 .value h4{
   color: var(--gold);
 
   text-transform: uppercase;
 }
+
 
 .value p{
   color: var(--paper-dim);
@@ -708,7 +851,9 @@ a{
 }
 
 
-/* TIDSLINJE */
+/* =========================================================
+   TIDSLINJE
+   ========================================================= */
 
 .timeline-wrapper{
   width: 100%;
@@ -720,6 +865,7 @@ a{
   margin-top: 4rem;
 }
 
+
 .about-timeline{
   width: 100%;
 
@@ -727,39 +873,87 @@ a{
 }
 
 
-/* KONTAKT */
+/* =========================================================
+   KONTAKT
+   ========================================================= */
 
-.contact{
-  text-align: center;
+#kontakt{
+  text-align: right;
 }
 
-.contact .section-head{
-  display: flex;
 
-  justify-content: center;
-}
+#kontakt .contact-lead{
+  text-align: right;
 
-.contact-lead{
+  margin-left: auto;
+  margin-right: 0;
+
   font-size:
     clamp(
-      1.3rem,
-      3vw,
-      1.9rem
+      1.4rem,
+      2.5vw,
+      2rem
     );
+
+  line-height: 1.4;
 
   color: var(--paper-dim);
 }
 
-.typewriter{
+
+#kontakt .typewriter{
   color: var(--gold);
+
+  font-weight: 500;
 }
+
 
 .cursor{
   color: var(--gold);
 }
 
 
-/* FOOTER */
+#kontakt .contact-details{
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 0.5rem;
+
+  margin-top: 1.5rem;
+}
+
+
+#kontakt .contact-details a{
+  display: block;
+
+  font-size:
+    clamp(
+      1.25rem,
+      2vw,
+      1.6rem
+    );
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  color: #55c9c3;
+
+  transition: opacity 0.2s ease;
+}
+
+
+#kontakt .contact-details a:hover{
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .footer{
   max-width: var(--max);
@@ -773,16 +967,22 @@ a{
 
   display: flex;
 
+  align-items: center;
+
   justify-content: space-between;
 
   flex-wrap: wrap;
+
+  gap: 1.5rem;
 }
+
 
 .socials{
   display: flex;
 
   gap: 1.5rem;
 }
+
 
 .socials a{
   color: var(--paper-dim);
@@ -791,7 +991,16 @@ a{
 }
 
 
-/* RESPONSIVE */
+.copyright{
+  color: var(--paper-dim);
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 900px){
 
@@ -805,24 +1014,62 @@ a{
 
 @media (max-width: 760px){
 
+  /* OVERSKRIFTER TIL VENSTRE PÅ MOBIL */
+
+  #projekter .section-head,
+  #galleri .section-head,
+  #om-mig .section-head,
+  #kontakt .section-head{
+    justify-content: flex-start;
+
+    text-align: left;
+  }
+
+
+  /* GALLERI */
+
   .gallery-item{
     flex: 0 0 100%;
   }
+
 
   .gallery-prev{
     left: 0.5rem;
   }
 
+
   .gallery-next{
     right: 0.5rem;
   }
+
+
+  /* OM MIG */
 
   .about-grid{
     grid-template-columns: 1fr;
   }
 
+
   .about-values{
     grid-template-columns: 1fr;
+  }
+
+
+  /* KONTAKT */
+
+  #kontakt,
+  #kontakt .contact-lead{
+    text-align: left;
+  }
+
+
+  #kontakt .contact-lead{
+    margin-left: 0;
+  }
+
+
+  #kontakt .contact-details{
+    align-items: flex-start;
   }
 
 }
@@ -833,178 +1080,4 @@ a{
   .projects{
     grid-template-columns: 1fr;
   }
-
-}
-
-/* =========================================================
-   FORSKUDTE OVERSKRIFTER
-   Projekter = venstre
-   Galleri   = højre
-   Om mig    = venstre
-   Kontakt   = højre
-   ========================================================= */
-
-/* Standard = venstre */
-.section .section-head {
-  width: 100%;
-  display: flex;
-}
-
-/* PROJEKTER */
-#projekter .section-head {
-  justify-content: flex-start;
-  text-align: left;
-}
-
-/* GALLERI */
-#galleri .section-head {
-  justify-content: flex-end;
-  text-align: right;
-}
-
-/* OM MIG */
-#om-mig .section-head {
-  justify-content: flex-start;
-  text-align: left;
-}
-
-/* KONTAKT */
-#kontakt .section-head {
-  justify-content: flex-end;
-  text-align: right;
-}
-
-
-/* MOBIL */
-@media (max-width: 760px) {
-
-  #projekter .section-head,
-  #galleri .section-head,
-  #om-mig .section-head,
-  #kontakt .section-head {
-    justify-content: flex-start;
-    text-align: left;
-  }
-
-}
-
-
-/* =========================================================
-   KONTAKT - HØJRESTILLET
-   ========================================================= */
-
-#kontakt {
-  text-align: right;
-}
-
-/* Overskriften KONTAKT */
-#kontakt .section-head {
-  justify-content: flex-end;
-  text-align: right;
-  margin-bottom: 3rem;
-}
-
-/* Typewriter + Send mig gerne en besked */
-#kontakt .contact-lead {
-  text-align: right;
-  margin-left: auto;
-  margin-right: 0;
-
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  line-height: 1.4;
-}
-
-/* Kaffe?, Et projekt? osv. */
-#kontakt .typewriter {
-  color: var(--gold);
-  font-weight: 500;
-}
-
-/* Mail + telefon UNDER HINANDEN */
-#kontakt .contact-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
-
-  margin-top: 1.5rem;
-}
-
-/* Mail og telefon */
-#kontakt .contact-details a {
-
-  display: block;
-
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-
-  font-weight: 500;
-
-  line-height: 1.4;
-
-  color: #55c9c3;
-
-  transition: opacity 0.2s ease;
-
-}
-
-#kontakt .contact-details a:hover {
-
-  opacity: 0.7;
-
-}
-
-
-/* MOBIL */
-@media (max-width: 760px) {
-
-  #kontakt,
-  #kontakt .section-head,
-  #kontakt .contact-lead {
-    text-align: left;
-  }
-
-  #kontakt .section-head {
-    justify-content: flex-start;
-  }
-
-  #kontakt .contact-lead {
-    margin-left: 0;
-  }
-
-  #kontakt .contact-details {
-    align-items: flex-start;
-  }
-
-}
-
-
-/* =========================
-   LOGO
-========================= */
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  display: block;
-}
-
-.logo-name {
-  color: #f2eee8;
-}
-
-.logo-name > span {
-  color: #d4a84f;
-}
-
-
-#projekter .section-head h2 {
-  font-size: clamp(7rem, 11vw, 11rem);
 }
