@@ -1003,3 +1003,8 @@ a{
 .logo-name > span {
   color: #d4a84f;
 }
+
+
+#projekter .section-head h2 {
+  font-size: clamp(7rem, 11vw, 11rem);
+}
