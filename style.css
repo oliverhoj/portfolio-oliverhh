@@ -426,6 +426,11 @@ a{
 }
 
 
+.project-media--contain video{
+  object-fit: contain;
+}
+
+
 .project-info h3{
   font-size:
     clamp(

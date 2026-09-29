@@ -244,6 +244,11 @@ a{
 }
 
 
+.case-hero-media--contain video{
+  object-fit: contain;
+}
+
+
 /* HERO TEKST */
 
 .case-hero-description{
