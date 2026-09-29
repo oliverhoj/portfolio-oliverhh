@@ -235,7 +235,8 @@ a{
 }
 
 
-.case-hero-media video{
+.case-hero-media video,
+.case-hero-media img{
   width: 100%;
   height: 100%;
 

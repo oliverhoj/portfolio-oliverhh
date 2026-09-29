@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spilcaféen — Oliver Høj</title>
+  <meta name="description" content="Spilcaféen — søgbar og tilgængelig digital spiloversigt. Caseprojekt af Oliver Høj.">
+  <link rel="stylesheet" href="ovartaci.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <a href="index.html#top" class="logo">
+      <img src="billeder/logo.png" alt="OH logo" class="logo-icon">
+    </a>
+
+    <nav class="nav" aria-label="Primær navigation">
+      <a href="index.html#projekter">Projekter</a>
+      <a href="index.html#galleri">Galleri</a>
+      <a href="index.html#om-mig">Om mig</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <main class="case-page">
+    <section class="case-hero">
+      <h1 class="case-hero-title">SPILCAFÉEN</h1>
+
+      <div class="case-hero-grid">
+        <div class="case-hero-media">
+          <img src="billeder/spilcafe-skak.jpg" alt="Kort med skakspillet i Spilcaféens spiloversigt">
+        </div>
+
+        <div class="case-hero-description">
+          <p>
+            En ny digital spiloversigt, der hjælper gæster med hurtigt at finde
+            det rette brætspil efter lokation, antal spillere, tid og genre.
+          </p>
+          <p>
+            Løsningen kombinerer et legende visuelt udtryk med en enkel,
+            responsiv og mere tilgængelig brugeroplevelse.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-content-section">
+      <h2>PROJEKTBESKRIVELSE</h2>
+      <div class="case-copy">
+        <p>
+          Opgaven var at videreudvikle Spilcaféens digitale spiloversigt, så
+          caféens gæster lettere kan gå på opdagelse i det store udvalg af spil.
+          Brugeren kan søge direkte eller filtrere efter blandt andet sted,
+          spilletid, antal spillere, sværhedsgrad og genre.
+        </p>
+        <p>
+          Hvert spil vises som et tydeligt kort med billede og nøgleinformation.
+          Fra kortet kan brugeren åbne en detaljeret visning med beskrivelse,
+          regler, bedømmelse, hyldeplacering og tilgængelighed.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-content-section">
+      <h2>DESIGN &amp; INTERAKTION</h2>
+      <div class="case-copy">
+        <p>
+          Det røde og sorte farveunivers tager afsæt i Spilcaféens identitet,
+          mens store spilbilleder, afrundede kort og tydelige filterknapper gør
+          oplevelsen overskuelig. Layoutet tilpasser sig både mobil og desktop.
+        </p>
+        <p>
+          Filtrering og søgning opdaterer resultaterne direkte. Udvalgte filtre
+          vises samlet, kan nulstilles og giver løbende feedback, så brugeren hele
+          tiden kan se, hvilke valg der påvirker spiloversigten.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-content-section">
+      <h2>WEBTILGÆNGELIGHED</h2>
+      <div class="case-copy">
+        <p>
+          Løsningen er forbedret med beskrivende labels, statusbeskeder til
+          skærmlæsere og <strong>aria-pressed</strong> på filterknapper. Spildetaljer
+          vises i et semantisk dialogelement, som kan betjenes med tastaturet.
+        </p>
+        <p>
+          Fokus, tydelige tilstande og mulighed for at lukke dialogen med Escape
+          gør den centrale søge- og filteroplevelse nemmere at bruge for flere.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-content-section">
+      <h2>PROGRAMMERING</h2>
+      <div class="case-copy">
+        <p>
+          Spiloversigten er bygget med <strong>HTML, CSS og JavaScript</strong>.
+          Spildata indlæses fra JSON, hvorefter JavaScript genererer kortene,
+          kombinerer søgning og filtre og styrer dialogen med spildetaljer.
+        </p>
+      </div>
+    </section>
+
+    <section class="case-content-section">
+      <h2>VÆRKTØJER</h2>
+      <div class="tools">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JAVASCRIPT</span>
+        <span>JSON</span>
+        <span>FIGMA</span>
+        <span>WCAG</span>
+      </div>
+    </section>
+
+    <section class="case-visuals" aria-label="Udvalgte spil fra løsningen">
+      <div class="visual-card">
+        <img src="billeder/spilcafe-catan.jpg" alt="Catan i Spilcaféens spiloversigt">
+      </div>
+      <div class="visual-card">
+        <img src="billeder/spilcafe-ticket-to-ride.jpg" alt="Ticket to Ride i Spilcaféens spiloversigt">
+      </div>
+      <div class="visual-card">
+        <img src="billeder/spilcafe-pandemic.jpg" alt="Pandemic i Spilcaféens spiloversigt">
+      </div>
+    </section>
+
+    <section class="result-section">
+      <h2>FIND DIT NÆSTE SPIL</h2>
+      <a href="https://oliverhoj.github.io/eksamen-del-2/" target="_blank" rel="noopener" class="case-button">
+        PRØV DEN SELV
+      </a>
+    </section>
+  </main>
+
+  <footer class="case-footer">
+    <a href="index.html#top" class="logo">
+      <img src="billeder/logo.png" alt="OH logo" class="logo-icon">
+    </a>
+    <a href="index.html#projekter">← TILBAGE TIL PROJEKTER</a>
+  </footer>
+
+  <div class="case-lightbox" id="case-lightbox" aria-hidden="true">
+    <button class="case-lightbox-close" id="case-lightbox-close" aria-label="Luk billede">×</button>
+    <img id="case-lightbox-image" src="" alt="">
+  </div>
+
+  <script>
+    const visualCards = document.querySelectorAll('.visual-card');
+    const lightbox = document.getElementById('case-lightbox');
+    const lightboxImage = document.getElementById('case-lightbox-image');
+    const closeButton = document.getElementById('case-lightbox-close');
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    visualCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const image = card.querySelector('img');
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        closeButton.focus();
+      });
+    });
+
+    closeButton.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
